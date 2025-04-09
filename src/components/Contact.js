@@ -1,15 +1,17 @@
 import React from "react";
 import "../css/Contact.css";
 
-export const Contact=()=> {
+export const Contact = () => {
   return (
     <section id="contact" className="contact-section py-5 text-center bg-light">
       <div className="container">
-        <h2 className="fw-bold mb-4">Contact Us</h2>
+        <h2 className="fw-bold mb-4 animate__animated animate__fadeIn">
+          Contact Us
+        </h2>
         <form
           action="https://formspree.io/f/xyzebyvj"
           method="POST"
-          className="mx-auto"
+          className="mx-auto animate__animated animate__fadeIn animate__delay-1s"
           style={{ maxWidth: "600px" }}
         >
           <div className="mb-3">
@@ -46,6 +48,4 @@ export const Contact=()=> {
       </div>
     </section>
   );
-}
-
-
+};
