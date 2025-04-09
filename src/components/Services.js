@@ -44,11 +44,16 @@ export const Services = () => {
   return (
     <section id="services" className="services-section py-5 bg-light">
       <div className="container">
-        <h2 className="text-center fw-bold mb-5">What We Do</h2>
+        <h2 className="text-center fw-bold mb-5 animate__animated animate__fadeIn">
+          What We Do
+        </h2>
         <div className="row">
           {services.map((service, idx) => (
             <div key={idx} className="col-md-6 col-lg-4 mb-4">
-              <div className="card h-100 shadow-sm service-card">
+              <div
+                className="card h-100 shadow-sm service-card animate__animated animate__fadeIn animate__delay-1s"
+                style={{ animationDelay: `${idx * 0.2}s` }}
+              >
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title fw-semibold text-primary">
                     {service.title}

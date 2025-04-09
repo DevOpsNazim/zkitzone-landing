@@ -1,12 +1,89 @@
-.services-section {
-  background-color: #f8f9fa;
+@import "animate.css";
+
+/* General reset and box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.service-card {
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.services-section {
+  background-color: #f8f9fa;
+  padding-top: 80px; /* Padding to push content down if needed */
+}
+
+.services-section h2 {
+  font-size: 2.5rem;
+  color: #343a40;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.services-section .card {
+  border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.services-section .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.services-section .card-body {
+  padding: 1.5rem;
+}
+
+.services-section .card-title {
+  font-size: 1.25rem;
+  color: #007bff;
+  font-weight: 600;
+}
+
+.services-section .card-text {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.services-section .col-md-6 {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .services-section h2 {
+    font-size: 2rem;
+  }
+
+  .services-section .card-body {
+    padding: 1rem;
+  }
+}
+
+/* Animation setup */
+.animate__animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animate__fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }
