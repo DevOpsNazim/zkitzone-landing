@@ -5,7 +5,7 @@ import "../css/Testimonials.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export const Testimonials=()=> {
+export const Testimonials = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -15,6 +15,7 @@ export const Testimonials=()=> {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
+    fade: true, // Enables fade transition
   };
 
   const testimonials = [
@@ -38,7 +39,9 @@ export const Testimonials=()=> {
   return (
     <section id="testimonials" className="testimonials-section bg-white py-5">
       <div className="container">
-        <h2 className="text-center fw-bold mb-5">What Our Clients Say</h2>
+        <h2 className="text-center fw-bold mb-5 section-title">
+          What Our Clients Say
+        </h2>
         <div
           className="testimonial-slider mx-auto"
           style={{ maxWidth: "700px" }}
@@ -49,8 +52,12 @@ export const Testimonials=()=> {
                 key={idx}
                 className="testimonial-card p-4 bg-light rounded shadow text-center"
               >
-                <p className="fs-5 fst-italic mb-3">“{item.quote}”</p>
-                <footer className="text-muted fw-medium">{item.author}</footer>
+                <p className="fs-5 fst-italic mb-3 testimonial-quote">
+                  “{item.quote}”
+                </p>
+                <footer className="text-muted fw-medium testimonial-author">
+                  {item.author}
+                </footer>
               </blockquote>
             ))}
           </Slider>
@@ -58,6 +65,4 @@ export const Testimonials=()=> {
       </div>
     </section>
   );
-}
-
-
+};
