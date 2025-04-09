@@ -41,6 +41,30 @@
   color: #495057;
 }
 
+/* Equipment List */
+.testimonial-equipment {
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.testimonial-equipment h6 {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.testimonial-equipment ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.testimonial-equipment ul li {
+  font-size: 1rem;
+  color: #555;
+}
+
 /* Carousel Dots Styling */
 .slick-dots {
   bottom: -30px;
