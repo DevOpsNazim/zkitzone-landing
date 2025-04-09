@@ -1,0 +1,21 @@
+.footer {
+  background-color: #111;
+}
+
+.footer-link {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #0d6efd;
+}
+
+.footer-social {
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+.footer-social:hover {
+  color: #0d6efd;
+}
