@@ -1,97 +1,13 @@
-/* body {
+body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-} */
-/* Global Styles */
-body {
-  background-color: #121212; /* Dark background color */
-  color: #e0e0e0; /* Light text color for contrast */
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Ensure all sections fill the height and maintain the dark theme */
-* {
-  box-sizing: border-box;
-}
-
-section {
-  background-color: #1c1c1c; /* Slightly lighter dark background for sections */
-  padding: 50px 20px;
-}
-
-/* Links */
-a {
-  color: #61dafb; /* Light blue links */
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #ff6347; /* Change to tomato red on hover */
-}
-
-/* Header (Navbar) */
-.navbar {
-  background-color: rgba(18, 18, 18, 0.9); /* Transparent dark navbar */
-}
-
-.navbar-brand,
-.nav-link {
-  color: #e0e0e0 !important; /* Light navbar text */
-}
-
-.nav-link:hover {
-  color: #61dafb; /* Hover effect */
-}
-
-/* Footer */
-footer {
-  background-color: #181818; /* Darker background for footer */
-  color: #e0e0e0; /* Light text for footer */
-}
-
-footer a {
-  color: #61dafb; /* Blue footer links */
-}
-
-footer a:hover {
-  color: #ff6347; /* Hover effect for footer links */
-}
-
-/* Hero Section */
-.hero-section {
-  background-color: #121212;
-  color: white;
-  padding: 0;
-}
-
-/* Buttons */
-.btn-primary {
-  background-color: #007bff;
-  border: 1px solid #007bff;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-  border: 1px solid #0056b3;
-}
-
-/* Text and heading styles */
-h1, h2, h3, h4, h5 {
-  color: #ffffff;
-}
-
-p {
-  color: #b0b0b0;
 }
