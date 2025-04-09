@@ -1,8 +1,110 @@
+/* Navbar Styling */
 .navbar {
-  z-index: 1050;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s ease-in-out;
 }
 
-.nav-link:hover {
-  color: #0d6efd !important;
+.navbar-dark {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-toggler-icon {
+  background-color: #fff;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #61dafb;
+  transform: scale(1.1);
+}
+
+.navbar-nav {
+  font-size: 1rem;
+}
+
+.nav-item-link {
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item-link:hover {
+  color: #61dafb;
+  transform: scale(1.1);
+}
+
+.navbar-collapse {
+  transition: opacity 0.4s ease;
+}
+
+.navbar-toggler {
+  border-color: #fff;
+}
+
+/* Shadow effect when navbar is at the top */
+.navbar-shadow {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover and animation effects */
+.navbar-nav .nav-item {
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Animated logo */
+@keyframes logoAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animated-logo {
+  animation: logoAnimation 5s infinite linear;
+}
+
+/* Mobile Navbar styling */
+@media (max-width: 767px) {
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 8px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 1rem 0;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+}
+
+/* Adding smooth transitions for links */
+.navbar-nav .nav-item {
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item:hover {
+  transform: scale(1.1);
+}
+
+/* Larger screens */
+@media (min-width: 992px) {
+  .navbar-nav .nav-item {
+    margin-right: 30px;
+  }
 }

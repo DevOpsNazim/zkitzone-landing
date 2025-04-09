@@ -1,12 +1,15 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/Navbar.css";
+import "../css/Navbar.css"; // Make sure this file contains the appropriate styles
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-transparent py-3">
+    <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-transparent py-3 shadow-lg">
       <div className="container">
-        <a className="navbar-brand fw-bold" href="/">
+        <a
+          className="navbar-brand fw-bold text-white logo animated-logo"
+          href="/"
+        >
           ZK IT Zone
         </a>
 
@@ -28,22 +31,25 @@ export const Navbar = () => {
         >
           <ul className="navbar-nav gap-3">
             <li className="nav-item">
-              <a className="nav-link text-white" href="#about">
+              <a className="nav-link text-white nav-item-link" href="#about">
                 About
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#services">
+              <a className="nav-link text-white nav-item-link" href="#services">
                 Services
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#testimonials">
+              <a
+                className="nav-link text-white nav-item-link"
+                href="#testimonials"
+              >
                 Testimonials
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#contact">
+              <a className="nav-link text-white nav-item-link" href="#contact">
                 Contact
               </a>
             </li>
