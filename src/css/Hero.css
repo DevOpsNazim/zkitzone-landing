@@ -1,6 +1,10 @@
-.hero-section {
+Hero Section Styling .hero-section {
   position: relative;
+  height: 100vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-video {
@@ -15,30 +19,29 @@
 }
 
 .hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  color: white;
+  z-index: 2;
+  text-align: center;
 }
 
 .hero-content h1 {
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 700;
+  text-transform: uppercase;
   margin-bottom: 1rem;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .hero-content p {
   font-size: 1.25rem;
   margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 1s forwards;
 }
 
 .hero-buttons a {
   font-size: 1.1rem;
   padding: 0.75rem 2rem;
-  color: white;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .hero-buttons .btn-primary {
@@ -46,17 +49,66 @@
   border-color: #007bff;
 }
 
-.hero-buttons .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
-}
-
 .hero-buttons .btn-outline-light {
   border-color: #ffffff;
   color: #ffffff;
 }
 
+.hero-buttons .btn-primary:hover,
 .hero-buttons .btn-outline-light:hover {
-  background-color: #ffffff;
-  color: #121212;
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.hero-buttons a {
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated {
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.delay-1s {
+  animation-delay: 1s;
+}
+
+.delay-2s {
+  animation-delay: 2s;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 767px) {
+  .hero-section {
+    height: 60vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons a {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
 }
