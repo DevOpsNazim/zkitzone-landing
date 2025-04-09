@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/Services.css";
 
-export const Services=()=> {
+export const Services = () => {
   const services = [
     {
       title: "Web Development & App Design",
@@ -64,6 +64,4 @@ export const Services=()=> {
       </div>
     </section>
   );
-}
-
-
+};
