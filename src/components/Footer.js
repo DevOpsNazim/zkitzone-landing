@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Footer.css";
+import "./Footer.css";
 
 export const Footer = () => {
   return (
@@ -8,8 +8,8 @@ export const Footer = () => {
         <div className="row mb-4">
           {/* Company Info */}
           <div className="col-md-4 mb-4">
-            <h5 className="fw-bold">ZK IT Zone</h5>
-            <p>
+            <h5 className="fw-bold footer-heading">ZK IT Zone</h5>
+            <p className="footer-text">
               We provide innovative IT solutions to businesses—from web and app
               development to cloud services and cybersecurity. Your success is
               our mission.
@@ -18,7 +18,7 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div className="col-md-4 mb-4">
-            <h5 className="fw-bold">Quick Links</h5>
+            <h5 className="fw-bold footer-heading">Quick Links</h5>
             <ul className="list-unstyled">
               <li>
                 <a href="#about" className="footer-link">
@@ -43,9 +43,9 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Social */}
+          {/* Social Media Links */}
           <div className="col-md-4 mb-4">
-            <h5 className="fw-bold">Follow Us</h5>
+            <h5 className="fw-bold footer-heading">Follow Us</h5>
             <div className="d-flex gap-3">
               <a href="https://facebook.com" className="footer-social">
                 <i className="fab fa-facebook"></i>
@@ -66,24 +66,26 @@ export const Footer = () => {
         {/* Contact Info */}
         <div className="row mb-4">
           <div className="col-md-6">
-            <h6 className="fw-semibold">Our Address</h6>
-            <p>H # 15, STR # 32 Canal Park Gulberg 2, Lahore.</p>
+            <h6 className="fw-semibold footer-heading">Our Address</h6>
+            <p className="footer-text">
+              H # 15, STR # 32 Canal Park Gulberg 2, Lahore.
+            </p>
           </div>
           <div className="col-md-6">
-            <h6 className="fw-semibold">Contact Us</h6>
-            <p>
+            <h6 className="fw-semibold footer-heading">Contact Us</h6>
+            <p className="footer-text">
               <strong>Phone 📞:</strong>{" "}
               <a href="tel:+923069113060" className="footer-link">
                 +92 (306) 911-3060
               </a>
             </p>
-            <p>
+            <p className="footer-text">
               <strong>Phone 📞:</strong>{" "}
               <a href="tel:+923049887779" className="footer-link">
                 +92 (304) 988-7779
               </a>
             </p>
-            <p>
+            <p className="footer-text">
               <strong>Email 📧:</strong>{" "}
               <a href="#contact" className="footer-link">
                 contact@zkitzone.com
