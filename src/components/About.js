@@ -1,35 +1,61 @@
-import React from "react";
-import "../css/About.css";
+import React, { useEffect } from "react";
+import "aos/dist/aos.css";
+import AOS from "aos";
+import "../assets/css/main.css";
 
-export const About = () => {
+const About = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
-    <section id="about" className="about-section py-5 px-4 bg-light">
-      <div className="container">
-        <h2 className="text-center fw-semibold mb-4 animate__animated animate__fadeIn">
-          Why ZK IT Zone?
-        </h2>
-        <div className="mx-auto" style={{ maxWidth: "800px" }}>
-          <p className="animate__animated animate__fadeIn animate__delay-1s">
-            At ZK IT Zone, we’re passionate about empowering businesses through
-            smart, scalable, and secure technology solutions. From cutting-edge
-            web and app development to robust cloud infrastructure, DevOps
-            automation, and enterprise-grade cybersecurity, we deliver IT
-            services designed to elevate your operations.
-          </p>
-          <p className="animate__animated animate__fadeIn animate__delay-2s">
-            Our team of certified experts works closely with you to understand
-            your unique needs and craft solutions that drive real results. With
-            24/7 support, transparent communication, and a commitment to
-            excellence, your satisfaction is not just our goal—it’s our
-            guarantee. At ZK IT Zone, your success is our mission.
-          </p>
-          <ul className="mt-4 animate__animated animate__fadeIn animate__delay-3s">
-            <li>✅ Certified in AWS, Azure, Docker, Linux</li>
-            <li>✅ Trusted by startups, SMBs, and global brands</li>
-            <li>✅ 100% committed to performance, security, and support</li>
-          </ul>
+    <section id="about" className="about section">
+      <div className="container" data-aos="fade-up">
+        <div className="row gx-0">
+          <div
+            className="col-lg-6 d-flex flex-column justify-content-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div className="content">
+              <h3>Who We Are</h3>
+              <h2>
+                Expedita voluptas omnis cupiditate totam eveniet nobis sint
+                iste. Dolores est repellat corrupti reprehenderit.
+              </h2>
+              <p>
+                Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt
+                et. Inventore et et dolor consequatur itaque ut voluptate sed
+                et. Magnam nam ipsum tenetur suscipit voluptatum nam et est
+                corrupti.
+              </p>
+              <div className="text-center text-lg-start">
+                <a
+                  href="#"
+                  className="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center"
+                >
+                  <span>Read More</span>
+                  <i className="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="col-lg-6 d-flex align-items-center"
+            data-aos="zoom-out"
+            data-aos-delay="200"
+          >
+            <img
+              src={require("../assets/img/about.png")}
+              className="img-fluid"
+              alt="About"
+            />
+          </div>
         </div>
       </div>
     </section>
   );
 };
+
+export default About;

@@ -1,45 +1,56 @@
 import React from "react";
-import "../css/Hero.css";
+import "aos/dist/aos.css";
+import AOS from "aos";
+import "../assets/css/main.css";
+import { useEffect } from "react";
 
-function Hero() {
+const Hero = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
-    <section className="hero-section position-relative overflow-hidden">
-      <video
-        className="hero-video"
-        src="/videos/hero-bg.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-      >
-        Your browser does not support the video tag.
-      </video>
-
-      <div className="hero-content container text-center position-absolute top-50 start-50 translate-middle text-white">
-        <h1 className="display-4 fw-bold animated fadeIn">
-          Smart IT Solutions
-        </h1>
-        <p className="lead animated fadeIn delay-1s">
-          We deliver scalable web and cloud systems for your growth.
-        </p>
-        <div className="hero-buttons mt-4">
-          <a
-            href="#contact"
-            className="btn btn-primary m-2 animated fadeIn delay-2s"
+    <section id="hero" className="hero section">
+      <div className="container">
+        <div className="row gy-4">
+          <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <h1 data-aos="fade-up">
+              We offer modern solutions for growing your business
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="100">
+              We are team of talented designers making websites with Bootstrap
+            </p>
+            <div
+              className="d-flex flex-column flex-md-row"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <a href="#about" className="btn-get-started">
+                Get Started <i className="bi bi-arrow-right"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
+                className="glightbox btn-watch-video d-flex align-items-center justify-content-center ms-0 ms-md-4 mt-4 mt-md-0"
+              >
+                <i className="bi bi-play-circle"></i>
+                <span>Watch Video</span>
+              </a>
+            </div>
+          </div>
+          <div
+            className="col-lg-6 order-1 order-lg-2 hero-img"
+            data-aos="zoom-out"
           >
-            Get Started
-          </a>
-          <a
-            href="#contact"
-            className="btn btn-outline-light m-2 animated fadeIn delay-2s"
-          >
-            Free Consultation
-          </a>
+            <img
+              src={require("../assets/img/hero-img.png")}
+              className="img-fluid animated"
+              alt="Hero"
+            />
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default Hero;
