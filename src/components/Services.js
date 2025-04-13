@@ -1,67 +1,86 @@
-import React from "react";
-import "../css/Services.css";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-export const Services = () => {
+const Services = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   const services = [
     {
-      title: "Web Development & App Design",
-      desc: "We craft high-performance websites and mobile apps tailored to your brand and goals. From UI/UX design to backend development, our solutions are fast, secure, and scalable. Whether you're launching a startup or modernizing an enterprise app, we bring your vision to life.",
+      icon: "bi-activity",
+      title: "Nesciunt Mete",
+      desc: "Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.",
+      style: "item-cyan",
+      delay: 100,
     },
     {
-      title: "Cloud Solutions (AWS, Azure, GCP)",
-      desc: "We design, deploy, and manage cloud infrastructure tailored to your business needs. From migrations to optimization, we ensure scalability, security, and cost-efficiency. Our certified experts work across AWS, Azure, and Google Cloud platforms.",
+      icon: "bi-broadcast",
+      title: "Eosle Commodi",
+      desc: "Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.",
+      style: "item-orange",
+      delay: 200,
     },
     {
-      title: "Cybersecurity & Data Protection",
-      desc: "We safeguard your digital assets with proactive threat detection and advanced encryption. From firewalls to compliance audits, we secure every layer of your IT environment. Stay protected against breaches, data loss, and evolving cyber threats.",
+      icon: "bi-easel",
+      title: "Ledo Markt",
+      desc: "Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.",
+      style: "item-teal",
+      delay: 300,
     },
     {
-      title: "Network Setup & Remote Support",
-      desc: "We build fast, secure, and scalable networks tailored to your office or remote teams. From router configuration to VPNs, we ensure seamless connectivity and uptime. Our 24/7 remote support resolves issues quickly to keep your operations running smoothly.",
+      icon: "bi-bounding-box-circles",
+      title: "Asperiores Commodi",
+      desc: "Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.",
+      style: "item-red",
+      delay: 400,
     },
     {
-      title: "DevOps & CI/CD Automation",
-      desc: "We streamline your development lifecycle with automated builds, testing, and deployments. Our DevOps practices boost release speed, reliability, and collaboration across teams. From GitHub Actions to Docker and Kubernetes, we optimize your entire pipeline.",
+      icon: "bi-calendar4-week",
+      title: "Velit Doloremque.",
+      desc: "Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.",
+      style: "item-indigo",
+      delay: 500,
     },
     {
-      title: "Database Migration",
-      desc: "We specialize in end-to-end database migration solutions—from MySQL, PostgreSQL, and MariaDB to cloud-native databases. Our experts ensure zero downtime, full data integrity, and optimized performance during every transition.",
-    },
-    {
-      title: "Backup & Restore",
-      desc: "Protect your critical data with robust backup and recovery strategies. We automate backups, implement secure storage, and offer disaster recovery to ensure your data is safe and always recoverable.",
-    },
-    {
-      title: "CCTV Installation",
-      desc: "Professional CCTV setup for security and peace of mind. We install high-resolution surveillance with remote monitoring to keep your property safe and under watch 24/7.",
-    },
-    {
-      title: "On-Site Data Center Deployment",
-      desc: "Complete setup of on-prem data centers from server installation to networking, giving your business robust infrastructure control, security, and performance.",
+      icon: "bi-chat-square-text",
+      title: "Dolori Architecto",
+      desc: "Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.",
+      style: "item-pink",
+      delay: 600,
     },
   ];
 
   return (
-    <section id="services" className="services-section py-5 bg-light">
+    <section id="services" className="services section">
+      {/* Section Title */}
+      <div className="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>
+          Check Our Services
+          <br />
+        </p>
+      </div>
+
       <div className="container">
-        <h2 className="text-center fw-bold mb-5 animate__animated animate__fadeIn">
-          What We Do
-        </h2>
-        <div className="row">
-          {services.map((service, idx) => (
-            <div key={idx} className="col-md-6 col-lg-4 mb-4">
+        <div className="row gy-4">
+          {services.map((service, index) => (
+            <div
+              className="col-lg-4 col-md-6"
+              key={index}
+              data-aos="fade-up"
+              data-aos-delay={service.delay}
+            >
               <div
-                className="card h-100 shadow-sm service-card animate__animated animate__fadeIn animate__delay-1s"
-                style={{ animationDelay: `${idx * 0.2}s` }}
+                className={`service-item ${service.style} position-relative`}
               >
-                <div className="card-body d-flex flex-column">
-                  <h5 className="card-title fw-semibold text-primary">
-                    {service.title}
-                  </h5>
-                  <p className="card-text text-secondary mt-2">
-                    {service.desc}
-                  </p>
-                </div>
+                <i className={`bi ${service.icon} icon`}></i>
+                <h3>{service.title}</h3>
+                <p>{service.desc}</p>
+                <a href="#" className="read-more stretched-link">
+                  <span>Read More</span> <i className="bi bi-arrow-right"></i>
+                </a>
               </div>
             </div>
           ))}
@@ -70,3 +89,5 @@ export const Services = () => {
     </section>
   );
 };
+
+export default Services;

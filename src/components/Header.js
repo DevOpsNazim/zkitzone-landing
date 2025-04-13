@@ -24,7 +24,7 @@ const Header = () => {
             <li>
               <a href="#services">Services</a>
             </li>
-            <li>
+            {/* <li>
               <a href="#portfolio">Portfolio</a>
             </li>
             <li>
@@ -80,7 +80,7 @@ const Header = () => {
               <a href="#">
                 <span>Listing Dropdown</span>{" "}
                 <i className="bi bi-chevron-down toggle-dropdown"></i>
-              </a>
+              </a> 
               <ul>
                 {[...Array(5)].map((_, i) => (
                   <li key={i}>
@@ -92,6 +92,15 @@ const Header = () => {
                   </li>
                 ))}
               </ul>
+            </li>*/}
+            <li>
+              <a href="#features">Features</a>
+            </li>
+            <li>
+              <a href="#pricing">Pricing</a>
+            </li>
+            <li>
+              <a href="#faq">Faq</a>
             </li>
             <li>
               <a href="#contact">Contact</a>
@@ -100,7 +109,7 @@ const Header = () => {
           <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a className="btn-getstarted flex-md-shrink-0" href="index.html#about">
+        <a className="btn-getstarted flex-md-shrink-0" href="#contact">
           Get Started
         </a>
       </div>

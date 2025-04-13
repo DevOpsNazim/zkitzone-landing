@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import CountUp from "react-countup";
+import { InView } from "react-intersection-observer";
 
 const Stats = () => {
   useEffect(() => {
@@ -12,13 +13,13 @@ const Stats = () => {
     {
       icon: "bi-emoji-smile",
       color: "color-blue",
-      end: 232,
+      end: 114,
       label: "Happy Clients",
     },
     {
       icon: "bi-journal-richtext",
       color: "color-orange",
-      end: 521,
+      end: 52,
       label: "Projects",
       style: { color: "#ee6c20" },
     },
@@ -32,7 +33,7 @@ const Stats = () => {
     {
       icon: "bi-people",
       color: "color-pink",
-      end: 15,
+      end: 13,
       label: "Hard Workers",
       style: { color: "#bb0852" },
     },
@@ -50,9 +51,13 @@ const Stats = () => {
                   style={stat.style}
                 ></i>
                 <div>
-                  <span>
-                    <CountUp end={stat.end} duration={1.5} />
-                  </span>
+                  <InView triggerOnce threshold={0.5}>
+                    {({ inView, ref }) => (
+                      <span ref={ref}>
+                        {inView ? <CountUp end={stat.end} duration={1.5} /> : 0}
+                      </span>
+                    )}
+                  </InView>
                   <p>{stat.label}</p>
                 </div>
               </div>
