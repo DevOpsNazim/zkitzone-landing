@@ -180,12 +180,18 @@ const Faq = () => {
   }, []);
 
   return (
-    <section id="faq" className="faq section-bg py-5">
+    // <section id="faq" className="faq section-bg py-5">
+    //   <div className="container">
+    //     <div className="section-title text-center mb-4">
+    //       <h2>Frequently Asked Questions</h2>
+    //     </div>
+    <section id="faq" className="faq section">
       <div className="container">
-        <div className="section-title text-center mb-4">
-          <h2>Frequently Asked Questions</h2>
+        {/* Section Title */}
+        <div className="container section-title" data-aos="fade-up">
+          <h2>F.A.Q</h2>
+          <p>Frequently Asked Questions</p>
         </div>
-
         {error && <p className="text-danger text-center">{error}</p>}
 
         <div className="accordion" id="faqAccordion">
