@@ -9,6 +9,7 @@ import "../src/assets/vendor/glightbox/css/glightbox.min.css";
 import "../src/assets/vendor/swiper/swiper-bundle.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
+
 // import "../src/assets/vendor/php-email-form/validate.js";
 // import "../src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js";
 // import "../src/assets/vendor/aos/aos.js";

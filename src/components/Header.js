@@ -1,75 +1,36 @@
-// import React, { useState } from "react";
-// import logo from "../assets/img/logo.png";
-
-// const Header = () => {
-//   const [menuOpen, setMenuOpen] = useState(false);
-
-//   const toggleMenu = () => {
-//     setMenuOpen(!menuOpen);
-//   };
-
-//   return (
-//     <header id="header" className="header d-flex align-items-center fixed-top">
-//       <div className="container-fluid container-xl position-relative d-flex align-items-center">
-//         <a href="/" className="logo d-flex align-items-center me-auto">
-//           <img src={logo} alt="Logo" />
-//           <h1 className="sitename">ZkItZone</h1>
-//         </a>
-
-//         {/* Toggle button for mobile */}
-//         <i
-//           className="mobile-nav-toggle d-xl-none bi bi-list"
-//           onClick={toggleMenu}
-//           style={{ cursor: "pointer", fontSize: "1.5rem" }}
-//         ></i>
-
-//         <nav
-//           id="navmenu"
-//           className={`navmenu ${menuOpen ? "d-block" : "d-none"} d-xl-block`}
-//         >
-//           <ul>
-//             <li>
-//               <a href="#hero" className="active">
-//                 Home
-//               </a>
-//             </li>
-//             <li>
-//               <a href="#about">About</a>
-//             </li>
-//             <li>
-//               <a href="#services">Services</a>
-//             </li>
-//             <li>
-//               <a href="#features">Features</a>
-//             </li>
-//             <li>
-//               <a href="#testimonials">Testimonials</a>
-//             </li>
-//             <li>
-//               <a href="#faq">Faq</a>
-//             </li>
-//             <li>
-//               <a href="#pricing">Pricing</a>
-//             </li>
-//             <li>
-//               <a href="#contact">Contact</a>
-//             </li>
-//           </ul>
-//         </nav>
-
-//         <a className="btn-getstarted flex-md-shrink-0" href="#contact">
-//           Get Started
-//         </a>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Header;
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import logo from "../assets/img/logo.png";
+import * as bootstrap from "bootstrap";
 
 const Header = () => {
+  const collapseRef = useRef(null);
+
+  useEffect(() => {
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+    const handleClick = () => {
+      if (
+        window.innerWidth < 992 &&
+        collapseRef.current?.classList.contains("show")
+      ) {
+        const collapseInstance = bootstrap.Collapse.getInstance(
+          collapseRef.current
+        );
+        if (collapseInstance) {
+          collapseInstance.hide();
+        }
+      }
+    };
+
+    navLinks.forEach((link) => link.addEventListener("click", handleClick));
+
+    return () => {
+      navLinks.forEach((link) =>
+        link.removeEventListener("click", handleClick)
+      );
+    };
+  }, []);
+
   return (
     <header id="header" className="header fixed-top bg-white shadow-sm">
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -93,7 +54,11 @@ const Header = () => {
           </button>
 
           {/* Nav Items */}
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div
+            className="collapse navbar-collapse"
+            id="navbarNav"
+            ref={collapseRef}
+          >
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               {[
                 ["Home", "#hero"],
