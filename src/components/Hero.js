@@ -18,7 +18,8 @@ const Hero = () => {
               We offer modern solutions for growing your business
             </h1>
             <p data-aos="fade-up" data-aos-delay="100">
-              We are team of talented designers making websites with Bootstrap
+              Smart IT Solutions | We deliver scalable web and cloud systems for
+              your growth.
             </p>
             <div
               className="d-flex flex-column flex-md-row"
@@ -26,14 +27,7 @@ const Hero = () => {
               data-aos-delay="200"
             >
               <a href="#contact" className="btn-get-started">
-                Get Started <i className="bi bi-arrow-right"></i>
-              </a>
-              <a
-                href="#"
-                className="glightbox btn-watch-video d-flex align-items-center justify-content-center ms-0 ms-md-4 mt-4 mt-md-0"
-              >
-                <i className="bi bi-play-circle"></i>
-                <span>Watch Video</span>
+                Free Consultation <i className="bi bi-arrow-right"></i>
               </a>
             </div>
           </div>

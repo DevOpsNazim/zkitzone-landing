@@ -9,34 +9,34 @@ const AltFeatures = () => {
 
   const altFeatures = [
     {
-      icon: "bi-award",
-      title: "Corporis voluptates sit",
-      desc: "Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip",
+      icon: "bi-code-slash",
+      title: "Web Development",
+      desc: "Responsive and high-performance websites built with the latest technologies like React, Next.js, and modern CMS platforms.",
     },
     {
-      icon: "bi-card-checklist",
-      title: "Ullamco laboris nisi",
-      desc: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt",
+      icon: "bi-phone",
+      title: "Mobile App Development",
+      desc: "Cross-platform mobile apps using Flutter and React Native to ensure seamless performance across Android and iOS.",
     },
     {
-      icon: "bi-dribbble",
-      title: "Labore consequatur",
-      desc: "Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere",
+      icon: "bi-brush",
+      title: "UI/UX & Logo Design",
+      desc: "Creative and user-focused interfaces, branding, and logos that communicate your vision and convert visitors into clients.",
     },
     {
-      icon: "bi-filter-circle",
-      title: "Beatae veritatis",
-      desc: "Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta",
+      icon: "bi-bar-chart-line",
+      title: "SEO & Digital Marketing",
+      desc: "Boost your search rankings and visibility with optimized content, keyword strategy, and on-page SEO techniques.",
     },
     {
-      icon: "bi-lightning-charge",
-      title: "Molestiae dolor",
-      desc: "Et fuga et deserunt et enim. Dolorem architecto ratione tensa raptor marte",
+      icon: "bi-hdd-network",
+      title: "Hosting & Domain Management",
+      desc: "End-to-end management of domain registration, hosting, SSL, and DNS for stable and secure online presence.",
     },
     {
-      icon: "bi-patch-check",
-      title: "Explicabo consectetur",
-      desc: "Est autem dicta beatae suscipit. Sint veritatis et sit quasi ab aut inventore",
+      icon: "bi-cloud-upload",
+      title: "Cloud App Deployment",
+      desc: "Launch and manage scalable applications on AWS, Azure, or Google Cloud with full CI/CD pipelines.",
     },
   ];
 

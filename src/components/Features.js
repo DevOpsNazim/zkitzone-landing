@@ -8,12 +8,30 @@ const Features = () => {
   }, []);
 
   const features = [
-    "Eos aspernatur rem",
-    "Facilis neque ipsa",
-    "Volup amet volupt",
-    "Rerum omnis sint",
-    "Alias possimus",
-    "Repellendus molli",
+    {
+      title: "Digital Transformation",
+      icon: "bi-laptop",
+    },
+    {
+      title: "Cloud & On-Premise Integration",
+      icon: "bi-cloud-arrow-down",
+    },
+    {
+      title: "Advanced Cybersecurity",
+      icon: "bi-shield-lock",
+    },
+    {
+      title: "DevOps & Automation",
+      icon: "bi-gear-wide-connected",
+    },
+    {
+      title: "Smart Networking",
+      icon: "bi-diagram-3",
+    },
+    {
+      title: "Backup & Disaster Recovery",
+      icon: "bi-database-lock",
+    },
   ];
 
   return (
@@ -47,8 +65,8 @@ const Features = () => {
                   data-aos-delay={200 + index * 100}
                 >
                   <div className="feature-box d-flex align-items-center">
-                    <i className="bi bi-check"></i>
-                    <h3>{feature}</h3>
+                    <i className={`bi ${feature.icon}`}></i>
+                    <h3>{feature.title}</h3>
                   </div>
                 </div>
               ))}

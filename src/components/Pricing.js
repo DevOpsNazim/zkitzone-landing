@@ -9,59 +9,59 @@ const Pricing = () => {
 
   const pricingPlans = [
     {
-      name: "Free Plan",
-      price: 0,
+      name: "Starter",
+      price: 99,
       color: "#20c997",
       icon: "bi-box",
       features: [
-        "Aida dere",
-        "Nec feugiat nisl",
-        "Nulla at volutpat dola",
-        { text: "Pharetra massa", unavailable: true },
-        { text: "Massa ultricies mi", unavailable: true },
+        "Basic Website (5 Pages)",
+        "Free Domain & Hosting (1 Year)",
+        "SSL Security",
+        { text: "Cloud Integration", unavailable: true },
+        { text: "Ongoing Support", unavailable: true },
       ],
       delay: 100,
     },
     {
-      name: "Starter Plan",
-      price: 19,
+      name: "Pro Business",
+      price: 249,
       color: "#0dcaf0",
-      icon: "bi-send",
+      icon: "bi-laptop",
       features: [
-        "Aida dere",
-        "Nec feugiat nisl",
-        "Nulla at volutpat dola",
-        "Pharetra massa",
-        { text: "Massa ultricies mi", unavailable: true },
+        "Custom Web Design + Mobile Optimization",
+        "Domain, Hosting & SSL (1 Year)",
+        "Basic SEO Setup",
+        "1 Cloud Account Setup (AWS/Azure)",
+        { text: "24/7 Support", unavailable: true },
       ],
       featured: true,
       delay: 200,
     },
     {
-      name: "Business Plan",
-      price: 29,
+      name: "Enterprise",
+      price: 499,
       color: "#fd7e14",
-      icon: "bi-airplane",
+      icon: "bi-building",
       features: [
-        "Aida dere",
-        "Nec feugiat nisl",
-        "Nulla at volutpat dola",
-        "Pharetra massa",
-        "Massa ultricies mi",
+        "Advanced Web App / Portal",
+        "Cloud Infra (AWS/Azure/GCP)",
+        "SEO, Speed & Security Optimization",
+        "Database Integration & Backup",
+        "Priority Support",
       ],
       delay: 300,
     },
     {
-      name: "Ultimate Plan",
-      price: 49,
+      name: "Ultimate IT Partner",
+      price: 899,
       color: "#0d6efd",
       icon: "bi-rocket",
       features: [
-        "Aida dere",
-        "Nec feugiat nisl",
-        "Nulla at volutpat dola",
-        "Pharetra massa",
-        "Massa ultricies mi",
+        "All-in-One IT Package",
+        "Web + Mobile App Development",
+        "Cloud Infrastructure Management",
+        "Cybersecurity Setup & Monitoring",
+        "DevOps + CI/CD Pipeline",
       ],
       delay: 400,
     },
@@ -73,8 +73,8 @@ const Pricing = () => {
       <div className="container section-title" data-aos="fade-up">
         <h2>Pricing</h2>
         <p>
-          Check Our Affordable Pricing
-          <br />
+          Choose the plan that fits your business goals. Transparent,
+          affordable, and scalable.
         </p>
       </div>
 
@@ -112,7 +112,7 @@ const Pricing = () => {
                     )
                   )}
                 </ul>
-                <a href="#" className="btn-buy">
+                <a href="#contact" className="btn-buy">
                   Buy Now
                 </a>
               </div>
