@@ -99,6 +99,67 @@
 
 // export default Faq;
 
+// import React, { useEffect, useState } from "react";
+
+// const Faq = () => {
+//   const [faqs, setFaqs] = useState([]);
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     // fetch("/api/faq") // Relative path works locally and on Vercel
+//     fetch(`${process.env.REACT_APP_API_URL}/api/faq`)
+//       .then((res) => {
+//         if (!res.ok) throw new Error("Failed to fetch FAQs");
+//         return res.json();
+//       })
+//       .then((data) => setFaqs(data))
+//       .catch((err) => {
+//         console.error("Error loading FAQs:", err);
+//         setError("Sorry, FAQs could not be loaded.");
+//       });
+//   }, []);
+
+//   return (
+//     <section id="faq" className="faq section py-5 bg-light">
+//       <div className="container">
+//         <h2 className="text-center mb-4">Frequently Asked Questions</h2>
+//         {error ? (
+//           <p className="text-danger text-center">{error}</p>
+//         ) : (
+//           <div className="accordion" id="faqAccordion">
+//             {faqs.map((faq, index) => (
+//               <div className="accordion-item" key={index}>
+//                 <h2 className="accordion-header" id={`heading${index}`}>
+//                   <button
+//                     className="accordion-button collapsed"
+//                     type="button"
+//                     data-bs-toggle="collapse"
+//                     data-bs-target={`#collapse${index}`}
+//                     aria-expanded="false"
+//                     aria-controls={`collapse${index}`}
+//                   >
+//                     {faq.question}
+//                   </button>
+//                 </h2>
+//                 <div
+//                   id={`collapse${index}`}
+//                   className="accordion-collapse collapse"
+//                   aria-labelledby={`heading${index}`}
+//                   data-bs-parent="#faqAccordion"
+//                 >
+//                   <div className="accordion-body">{faq.answer}</div>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         )}
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Faq;
+
 import React, { useEffect, useState } from "react";
 
 const Faq = () => {
@@ -106,53 +167,57 @@ const Faq = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // fetch("/api/faq") // Relative path works locally and on Vercel
-    fetch(`${process.env.REACT_APP_API_URL}/api/faq`)
+    fetch("/faq.json")
       .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch FAQs");
+        if (!res.ok) throw new Error("Failed to load FAQs");
         return res.json();
       })
       .then((data) => setFaqs(data))
       .catch((err) => {
         console.error("Error loading FAQs:", err);
-        setError("Sorry, FAQs could not be loaded.");
+        setError("Could not load FAQs. Please try again later.");
       });
   }, []);
 
   return (
-    <section id="faq" className="faq section py-5 bg-light">
+    <section id="faq" className="faq section-bg py-5">
       <div className="container">
-        <h2 className="text-center mb-4">Frequently Asked Questions</h2>
-        {error ? (
-          <p className="text-danger text-center">{error}</p>
-        ) : (
-          <div className="accordion" id="faqAccordion">
-            {faqs.map((faq, index) => (
-              <div className="accordion-item" key={index}>
-                <h2 className="accordion-header" id={`heading${index}`}>
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target={`#collapse${index}`}
-                    aria-expanded="false"
-                    aria-controls={`collapse${index}`}
-                  >
-                    {faq.question}
-                  </button>
-                </h2>
-                <div
-                  id={`collapse${index}`}
-                  className="accordion-collapse collapse"
-                  aria-labelledby={`heading${index}`}
-                  data-bs-parent="#faqAccordion"
+        <div className="section-title text-center mb-4">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        {error && <p className="text-danger text-center">{error}</p>}
+
+        <div className="accordion" id="faqAccordion">
+          {faqs.map((faq, index) => (
+            <div className="accordion-item" key={index}>
+              <h2 className="accordion-header" id={`heading-${index}`}>
+                <button
+                  className={`accordion-button ${
+                    index !== 0 ? "collapsed" : ""
+                  }`}
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target={`#collapse-${index}`}
+                  aria-expanded={index === 0}
+                  aria-controls={`collapse-${index}`}
                 >
-                  <div className="accordion-body">{faq.answer}</div>
-                </div>
+                  {faq.question}
+                </button>
+              </h2>
+              <div
+                id={`collapse-${index}`}
+                className={`accordion-collapse collapse ${
+                  index === 0 ? "show" : ""
+                }`}
+                aria-labelledby={`heading-${index}`}
+                data-bs-parent="#faqAccordion"
+              >
+                <div className="accordion-body">{faq.answer}</div>
               </div>
-            ))}
-          </div>
-        )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
