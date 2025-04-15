@@ -1,0 +1,138 @@
+<!-- Step-by-Step: Save Newsletter Emails to Google Sheets 🔹 1. Create a Google
+Sheet Go to Google Sheets Create a new sheet and name it something like
+Newsletter Subscribers Rename the first sheet tab to: Subscribers In row 1, set
+the headers: Email Subscribed At 🔹 2. Create a Google Apps Script In your
+Google Sheet, click: Extensions > Apps Script Replace any existing code with
+this: ======================================================== function
+doPost(e) { var sheet =
+SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Subscribers"); var email =
+e.parameter.email; if (!email) { return ContentService.createTextOutput("Missing
+email").setMimeType(ContentService.MimeType.TEXT); } // Add to sheet
+sheet.appendRow([email, new Date()]); return
+ContentService.createTextOutput("OK").setMimeType(ContentService.MimeType.TEXT);
+} ======================================================== Click the Save icon,
+name the project: Newsletter Handler Replace
+https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec with the actual script
+URL you copied earlier. 🎉 That’s it! Every submission will now go directly to
+your Google Sheet — no PHP, no database hosting required. -->
+
+<!-- Manage deployments Deployment successfully updated. Version 1 on Apr 16, 2025,
+4:22 AM mailto:k8sibrahim@gmail.com Deployment ID
+AKfycbz2-BnBVaM5juERP614OG5zqMqehvJElazNIWKL0SnCGDAwsM4lVEy5rbKPMyW4gAVS Web app
+https://script.google.com/macros/s/AKfycbz2-BnBVaM5juERP614OG5zqMqehvJElazNIWKL0SnCGDAwsM4lVEy5rbKPMyW4gAVS/exec -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newsletter Subscription</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2em;
+        background: #f7f7f7;
+      }
+      form {
+        max-width: 400px;
+        margin: auto;
+        padding: 2em;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input[type="email"] {
+        width: 100%;
+        padding: 0.75em;
+        margin-bottom: 1em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        padding: 0.75em 1.5em;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .loading,
+      .error-message,
+      .sent-message {
+        display: none;
+        margin-top: 1em;
+      }
+      .d-block {
+        display: block !important;
+      }
+      .error-message {
+        color: red;
+      }
+      .sent-message {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      action="https://script.google.com/macros/s/AKfycbz2-BnBVaM5juERP614OG5zqMqehvJElazNIWKL0SnCGDAwsM4lVEy5rbKPMyW4gAVS/exec"
+      method="POST"
+      class="php-email-form"
+    >
+      <div class="loading">Loading...</div>
+      <div class="error-message"></div>
+      <div class="sent-message">You’ve successfully subscribed!</div>
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="Enter your email"
+      />
+      <button type="submit">Subscribe</button>
+    </form>
+
+    <script>
+      (function () {
+        "use strict";
+        let forms = document.querySelectorAll(".php-email-form");
+        forms.forEach(function (e) {
+          e.addEventListener("submit", function (event) {
+            event.preventDefault();
+            let thisForm = this;
+            let action = thisForm.getAttribute("action");
+            if (!action) return;
+            thisForm.querySelector(".loading").classList.add("d-block");
+            thisForm
+              .querySelector(".error-message")
+              .classList.remove("d-block");
+            thisForm.querySelector(".sent-message").classList.remove("d-block");
+            let formData = new FormData(thisForm);
+            fetch(action, {
+              method: "POST",
+              body: formData,
+            })
+              .then((response) => response.text())
+              .then((data) => {
+                thisForm.querySelector(".loading").classList.remove("d-block");
+                if (data.trim() === "OK") {
+                  thisForm
+                    .querySelector(".sent-message")
+                    .classList.add("d-block");
+                  thisForm.reset();
+                } else {
+                  throw new Error(data);
+                }
+              })
+              .catch((error) => {
+                thisForm.querySelector(".loading").classList.remove("d-block");
+                thisForm.querySelector(".error-message").textContent = error;
+                thisForm
+                  .querySelector(".error-message")
+                  .classList.add("d-block");
+              });
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

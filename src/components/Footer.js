@@ -310,6 +310,7 @@
 // export default Footer;
 
 import React from "react";
+import NewsletterForm from "./NewsletterForm";
 
 const Footer = () => {
   return (
@@ -324,7 +325,7 @@ const Footer = () => {
                 Subscribe to our newsletter and receive the latest news about
                 our products and services!
               </p>
-              <form
+              {/* <form
                 className="php-email-form"
                 action="https://formspree.io/f/xyzebyvj"
                 method="POST"
@@ -342,7 +343,8 @@ const Footer = () => {
                 <div className="sent-message">
                   Your subscription request has been sent. Thank you!
                 </div>
-              </form>
+              </form> */}
+              <NewsletterForm />
             </div>
           </div>
         </div>
